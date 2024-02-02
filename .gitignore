@@ -40,6 +40,7 @@ node_modules
 # We are having only wp-content items at the moment, so this makes more sense
 /wp-content/uploads/
 /wp-content/upgrade/
+/wp-content/index.php
 
 ### Themes ###
 wp-content/themes/twentytwentyone/
@@ -50,6 +51,9 @@ wp-content/themes/twentytwentytwo/
 
 ### Plugins ###
 /wp-content/db.php
+/wp-content/plugins/advanced-custom-fields/
+/wp-content/plugins/query-monitor/
+/wp-content/plugins/wp-dummy-content-generator/
 
 ### Backups Files ###
 # List the backup files here

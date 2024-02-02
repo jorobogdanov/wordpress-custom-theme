@@ -85,3 +85,17 @@
         <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get Started<i class="fa fa-arrow-right ms-3"></i></a>
     </nav>
     <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center">
+            <h1 class="display-4 text-white animated slideInDown mb-4"><?php the_title(); ?></h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="<?php echo esc_url( get_home_url() ); ?>">Home</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page"><?php the_title(); ?></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->

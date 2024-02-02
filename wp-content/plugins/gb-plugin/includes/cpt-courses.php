@@ -61,6 +61,7 @@ class GB_courses {
 				'editor',
 				'author',
 				'thumbnail',
+				'excerpt',
 				'revisions',
 			),
 			'show_in_rest'       => true
