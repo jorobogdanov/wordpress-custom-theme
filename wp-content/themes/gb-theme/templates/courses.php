@@ -1,3 +1,8 @@
+<?php
+/**
+ * Template name: Courses
+ */
+?>
 <?php get_header(); ?>
 
 <!-- Courses Start -->

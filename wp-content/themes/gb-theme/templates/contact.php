@@ -1,3 +1,8 @@
+<?php
+/**
+ * Template name: Contact
+ */
+?>
 <?php get_header(); ?>
 
 <!-- Contact Start -->
