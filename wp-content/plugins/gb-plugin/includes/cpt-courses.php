@@ -11,6 +11,12 @@ class GB_courses {
         // Register the CPT and taxonomies
 		add_action( 'init', array( $this, 'cpt_courses' ) );
         add_action( 'init', array( $this, 'courses_category_taxonomy' ) );
+
+		// Register Metaboxes
+		add_action( 'add_meta_boxes', array( $this, 'register_meta_boxes' ) );
+
+		// Save Actions
+		add_action( 'save_post', array( $this, 'courses_meta_save' ) );
     }
 
     /**
@@ -87,8 +93,47 @@ class GB_courses {
 		);
 
 		register_taxonomy( 'course-category', 'course', $args );
+
+	}
+
+	/**
+	 * Register meta box Is featured
+	 */
+	public function register_meta_boxes() {
+		add_meta_box( 'featured', __( 'Is Featured?', 'gb-plugin' ), array( $this, 'courses_featured_metabox_callback' ), 'course', 'side' );
+	}
+
+	/**
+	 * Callback function for the meta box
+	 */
+	public function courses_featured_metabox_callback ( $post_id ) {
+		$checked = get_post_meta( $post_id->ID, 'is_featured', true );
+		?>
+		<div>
+			<label for='is-featured'>Featured</label>
+			<input id='is-featured' name='isfeatured' type='checkbox' value='1' <?php checked( $checked, 1, true ); ?>/>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Save post meta from the Featured meta box 
+	 */
+	public function courses_meta_save ( $post_id ) {
+		if ( empty( $post_id ) ) {
+			return;
+		}
+
+		$featured = '';
+
+		if ( isset( $_POST['isfeatured'] ) ) {
+			$featured = esc_attr( $_POST['isfeatured'] );
+		}
+
+		update_post_meta( $post_id, 'is_featured', $featured );
 	}
 }
 
 $gb_courses_instance = new GB_courses();
+
 endif;

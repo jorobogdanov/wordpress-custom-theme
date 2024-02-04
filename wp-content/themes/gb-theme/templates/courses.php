@@ -15,9 +15,8 @@
         <div class="row g-4 justify-content-center">
             <?php 
                 $courses_query_args = array(
-                    'post_type' => 'course',
-                    'post_status' => 'publish',
-                    'posts_per_page' => 3
+                    'post_type'      => 'course',
+                    'post_status'    => 'publish'
                 );
             
                 $course_query = new WP_Query( $courses_query_args );

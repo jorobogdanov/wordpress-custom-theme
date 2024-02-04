@@ -158,63 +158,7 @@
             <h1 class="display-6 mb-4">Our Courses Upskill You With Driving Training</h1>
         </div>
         <div class="row g-4 justify-content-center">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                    <div class="text-center p-4 pt-0">
-                        <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">$99</div>
-                        <h5 class="mb-3">Automatic Car Lessons</h5>
-                        <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                        <ol class="breadcrumb justify-content-center mb-0">
-                            <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>Beginner</li>
-                            <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>3 Week</li>
-                        </ol>
-                    </div>
-                    <div class="position-relative mt-auto">
-                        <img class="img-fluid" src="http://softuni.local/wp-content/themes/gb-theme/img/courses-1.jpg" alt="">
-                        <div class="courses-overlay">
-                            <a class="btn btn-outline-primary border-2" href="">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                    <div class="text-center p-4 pt-0">
-                        <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">$99</div>
-                        <h5 class="mb-3">Highway Driving Lesson</h5>
-                        <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                        <ol class="breadcrumb justify-content-center mb-0">
-                            <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>Beginner</li>
-                            <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>3 Week</li>
-                        </ol>
-                    </div>
-                    <div class="position-relative mt-auto">
-                        <img class="img-fluid" src="http://softuni.local/wp-content/themes/gb-theme/img/courses-2.jpg" alt="">
-                        <div class="courses-overlay">
-                            <a class="btn btn-outline-primary border-2" href="">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="courses-item d-flex flex-column bg-white overflow-hidden h-100">
-                    <div class="text-center p-4 pt-0">
-                        <div class="d-inline-block bg-primary text-white fs-5 py-1 px-4 mb-4">$99</div>
-                        <h5 class="mb-3">International Driving</h5>
-                        <p>Tempor erat elitr rebum at clita dolor diam ipsum sit diam amet diam et eos</p>
-                        <ol class="breadcrumb justify-content-center mb-0">
-                            <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i>Beginner</li>
-                            <li class="breadcrumb-item small"><i class="fa fa-calendar-alt text-primary me-2"></i>3 Week</li>
-                        </ol>
-                    </div>
-                    <div class="position-relative mt-auto">
-                        <img class="img-fluid" src="http://softuni.local/wp-content/themes/gb-theme/img/courses-3.jpg" alt="">
-                        <div class="courses-overlay">
-                            <a class="btn btn-outline-primary border-2" href="">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php echo do_shortcode( '[display_featured_courses posts_per_page="3"]' ); ?>
             <div class="col-lg-8 my-6 mb-0 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="bg-primary text-center p-5">
                     <h1 class="mb-4">Make Appointment</h1>

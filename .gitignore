@@ -54,6 +54,7 @@ wp-content/themes/twentytwentytwo/
 /wp-content/plugins/advanced-custom-fields/
 /wp-content/plugins/query-monitor/
 /wp-content/plugins/wp-dummy-content-generator/
+/wp-content/plugins/duplicate-post/
 
 ### Backups Files ###
 # List the backup files here
