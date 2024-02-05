@@ -61,3 +61,60 @@ function add_class_to_menu_link( $atts, $item, $args ) {
 }
 
 add_filter('nav_menu_link_attributes', 'add_class_to_menu_link', 1, 3);
+
+/**
+ * Add the top level menu page.
+ */
+function gb_theme_options_page() {
+	add_menu_page(
+		'GB theme',
+		'GB theme Options',
+		'manage_options',
+		'gb-theme-options',
+		'gb_theme_options_page_html'
+	);
+}
+
+/**
+ * Register our gb-theme_options_page to the admin_menu action hook.
+ */
+add_action( 'admin_menu', 'gb_theme_options_page' );
+
+/**
+ * Top level menu callback function
+ */
+function gb_theme_options_page_html() {
+	// check user capabilities
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+    $gb_theme_options = get_option( 'gb-theme-options' );
+    $hide_top_bar = get_option( 'gb_theme_hide_top_bar' );
+
+    if ( ! empty( $_POST['gb_theme_save'] ) ) {
+
+        if ( ! empty( $_POST['hide_top_bar'] ) ) {
+            $hide_top_bar = esc_attr( $_POST['hide_top_bar'] );
+            update_option( 'gb_theme_hide_top_bar', $hide_top_bar  );
+        } else {
+            delete_option( 'gb_theme_hide_top_bar' );
+        }
+    }
+
+	?>
+        <div class="wrap">
+            <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+            <form action="" method="post">
+                <div>
+                    <label for="hide_top_bar">Hide top bar</label>
+                    <input type="checkbox" name="hide_top_bar" <?php echo checked( $hide_top_bar, 1, true ) ?> id="hide_top_bar" value="1">
+                </div>
+                <div>
+                    <input type="submit" value="Update me">
+                </div>
+                <input type="hidden" name="gb_theme_save" value="1">
+            </form>
+        </div>
+	<?php
+}

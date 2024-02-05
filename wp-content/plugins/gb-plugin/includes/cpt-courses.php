@@ -3,7 +3,7 @@
 if ( ! class_exists( 'GB_courses' ) ) :
 
 /**
- * Class that registers custom post type Trainers
+ * Class that registers custom post type Courses
  */
 class GB_courses {
 
