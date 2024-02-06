@@ -110,3 +110,35 @@ function gb_theme_options_page_html() {
         </div>
 	<?php
 }
+
+/**
+ * Register footer widget areas
+ */
+function gb_footer_widget_areas() {
+    register_sidebar(
+		array(
+			'id'            => 'footer-col-1',
+			'name'          => __( 'Footer Quick Links' ),
+			'description'   => __( 'Widget area for the footer quick links.' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="text-light mb-4">',
+			'after_title'   => '</h4>',
+		)
+	);
+
+    register_sidebar(
+		array(
+			'id'            => 'footer-col-2',
+			'name'          => __( 'Footer Popular Links' ),
+			'description'   => __( 'Widget area for the footer popular links.' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="text-light mb-4">',
+			'after_title'   => '</h4>',
+		)
+	);
+
+}
+
+add_action( 'widgets_init', 'gb_footer_widget_areas' );
