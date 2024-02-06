@@ -94,3 +94,12 @@ function submit_star_rating() {
 
 add_action('wp_ajax_submit_star_rating', 'submit_star_rating'); // For logged in users
 add_action('wp_ajax_nopriv_submit_star_rating', 'submit_star_rating'); // For anonymous users
+
+/**
+ * Capitalize post titles
+ */
+function capitalise_post_titles( $title ) {
+    return ucwords( $title );
+}
+
+add_filter( 'the_title', 'capitalise_post_titles' );
