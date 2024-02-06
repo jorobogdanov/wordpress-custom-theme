@@ -3,9 +3,9 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Get In Touch</h4>
-                    <h2 class="text-primary mb-4"><i class="fa fa-car text-white me-2"></i>Drivin</h2>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <h4 class="text-white mb-4"><?php _e( 'Get In Touch', 'gb-theme' ); ?></h4>
+                    <h2 class="text-primary mb-4"><i class="fa fa-car text-white me-2"></i><?php _e( 'Drivin', 'gb-theme' ); ?></h2>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i><?php _e( '123 Street, New York, USA', 'gb-theme' ); ?></p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                 </div>
@@ -24,14 +24,14 @@
                     ?>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <h4 class="text-light mb-4"><?php _e( 'Newsletter', 'gb-theme' ); ?></h4>
                     <form action="">
                         <div class="input-group">
                             <input type="text" class="form-control p-3 border-0" placeholder="Your Email Address">
-                            <button class="btn btn-primary">Sign Up</button>
+                            <button class="btn btn-primary"><?php _e( 'Sign Up', 'gb-theme' ); ?></button>
                         </div>
                     </form>
-                    <h6 class="text-white mt-4 mb-3">Follow Us</h6>
+                    <h6 class="text-white mt-4 mb-3"><?php _e( 'Follow Us', 'gb-theme' ); ?></h6>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light me-1" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-outline-light me-1" href=""><i class="fab fa-facebook-f"></i></a>

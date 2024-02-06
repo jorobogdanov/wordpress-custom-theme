@@ -12,7 +12,7 @@
                         <h1 class="display-6 mb-4"><?php the_title(); ?></h1>
                         <div class="mb-5"><?php the_content(); ?></div>
                         <div class="row mb-5">
-                            <div>Trainer rating: </div>
+                            <div><?php _e( 'Trainer rating: ', 'gb-theme' ); ?></div>
                             <div class="star-rating">
                                 <span class="star" data-value="1">&#9733;</span>
                                 <span class="star" data-value="2">&#9733;</span>
@@ -24,7 +24,7 @@
                             <?php 
                                 $average_rating = get_post_meta(get_the_ID(), 'average_rating', true);
                                 if( $average_rating ) {
-                                    echo '<div class="average-rating">Average Rating: <span></span>/5</div>';
+                                    echo '<div class="average-rating">' . _( 'Average Rating:', 'gb-theme' ) . '<span></span>/5</div>';
                                 }
                             ?>
                         </div>
@@ -33,7 +33,7 @@
                 
                 <?php else : ?>
                     
-                    <p>Sorry there is no content!</p>
+                    <p><?php _e( 'Sorry there is no content!', 'gb-theme' ); ?></p>
                 
                 <?php endif; ?>
             </div>

@@ -26,13 +26,13 @@
                                 $reading_time = ceil($word_count / 150); // Assuming an average reading speed of 150 words per minute
                             ?>
                             <ol class="breadcrumb justify-content-center mb-0">
-                                <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i><?php echo 'Reading time: ' . $reading_time . ' minutes'; ?></li>
+                                <li class="breadcrumb-item small"><i class="fa fa-signal text-primary me-2"></i><?php echo _e('Reading time: ', 'gb-theme') . $reading_time . _e(' minutes', 'gb-theme'); ?></li>
                             </ol>
                         </div>
                         <div class="position-relative mt-auto">
                             <?php echo get_the_post_thumbnail(); ?>
                             <div class="courses-overlay">
-                                <a class="btn btn-outline-primary border-2" href="<?php the_permalink(); ?>">Read More</a>
+                                <a class="btn btn-outline-primary border-2" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'gb-theme' ); ?></a>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
 
         <?php else : ?>
 
-            No posts found.
+            <?php _e( 'No posts found.', 'gb-theme' ); ?>
 
         <?php endif; ?>
     </div>

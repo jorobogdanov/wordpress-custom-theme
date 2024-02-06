@@ -39,11 +39,11 @@
                 <div class="col-lg-7 px-5 text-start">
                     <div class="h-100 d-inline-flex align-items-center me-4">
                         <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                        <small>123 Street, New York, USA</small>
+                        <small><?php _e( '123 Street, New York, USA', 'gb-theme' ); ?></small>
                     </div>
                     <div class="h-100 d-inline-flex align-items-center">
                         <small class="far fa-clock text-primary me-2"></small>
-                        <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
+                        <small><?php _e( 'Mon - Fri : 09.00 AM - 09.00 PM', 'gb-theme' ); ?></small>
                     </div>
                 </div>
                 <div class="col-lg-5 px-5 text-end">
@@ -67,7 +67,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="<?php echo esc_url( get_home_url() ); ?>" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-            <h2 class="m-0"><i class="fa fa-car text-primary me-2"></i>Drivin</h2>
+            <h2 class="m-0"><i class="fa fa-car text-primary me-2"></i><?php _e( 'Drivin', 'gb-theme' ); ?></h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -83,7 +83,7 @@
                 'link_class'   => 'nav-item nav-link'
             ));
         ?>
-        <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get Started<i class="fa fa-arrow-right ms-3"></i></a>
+        <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block"><?php _e( 'Get Started', 'gb-theme' ); ?><i class="fa fa-arrow-right ms-3"></i></a>
     </nav>
     <!-- Navbar End -->
 
@@ -94,7 +94,7 @@
                 <h1 class="display-4 text-white animated slideInDown mb-4"><?php the_title(); ?></h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a class="text-white" href="<?php echo esc_url( get_home_url() ); ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="<?php echo esc_url( get_home_url() ); ?>"><?php _e( 'Home', 'gb-theme' ); ?></a></li>
                         <li class="breadcrumb-item text-primary active" aria-current="page"><?php the_title(); ?></li>
                     </ol>
                 </nav>

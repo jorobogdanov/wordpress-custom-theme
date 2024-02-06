@@ -14,7 +14,7 @@
     <div class="container">
         <?php if ($query->have_posts()) : ?>
             <div class="text-center mb-3">
-                <h2>Posts from author: <?php echo get_the_author(); ?></h2>
+                <h2><?php echo _e( 'Posts from author: ', 'gb-theme') . get_the_author(); ?></h2>
             </div>
             <div class="row g-4 justify-content-center">
             <?php while ($query->have_posts()) : $query->the_post(); ?>
@@ -60,7 +60,7 @@
 
         <?php else : ?>
 
-            No posts found.
+            <?php _e( 'No posts found.', 'gb-theme' ); ?>
 
         <?php endif; ?>
     </div>

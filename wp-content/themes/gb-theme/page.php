@@ -16,7 +16,7 @@
                 
                 <?php else : ?>
                     
-                    <p>Sorry there is no content!</p>
+                    <p><?php _e( 'Sorry there is no content!', 'gb-theme' ); ?></p>
                 
                 <?php endif; ?>
             </div>
