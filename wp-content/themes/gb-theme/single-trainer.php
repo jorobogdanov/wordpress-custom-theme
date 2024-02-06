@@ -11,6 +11,23 @@
                         
                         <h1 class="display-6 mb-4"><?php the_title(); ?></h1>
                         <div class="mb-5"><?php the_content(); ?></div>
+                        <div class="row mb-5">
+                            <div>Trainer rating: </div>
+                            <div class="star-rating">
+                                <span class="star" data-value="1">&#9733;</span>
+                                <span class="star" data-value="2">&#9733;</span>
+                                <span class="star" data-value="3">&#9733;</span>
+                                <span class="star" data-value="4">&#9733;</span>
+                                <span class="star" data-value="5">&#9733;</span>
+                            </div>
+                            <input type="hidden" id="trainer_id" value="<?php echo get_the_ID(); ?>">
+                            <?php 
+                                $average_rating = get_post_meta(get_the_ID(), 'average_rating', true);
+                                if( $average_rating ) {
+                                    echo '<div class="average-rating">Average Rating: <span></span>/5</div>';
+                                }
+                            ?>
+                        </div>
                 
                     <?php endwhile; ?>
                 

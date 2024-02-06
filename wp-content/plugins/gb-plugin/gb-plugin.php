@@ -22,3 +22,15 @@ if ( ! defined( 'GB_INCLUDE' ) ) {
 require GB_INCLUDE . '/functions.php';
 require GB_INCLUDE . '/cpt-courses.php';
 require GB_INCLUDE . '/cpt-trainers.php';
+
+/**
+ * Enqueue plugin assets
+ */
+function gb_plugin_enqueue() {
+
+    wp_enqueue_script( 'gb-script', plugins_url( 'assets/js/script.js', __FILE__ ), array( 'jquery' ), 1.0 );
+
+    wp_localize_script( 'gb-script', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+}
+
+add_action( 'wp_enqueue_scripts', 'gb_plugin_enqueue' );

@@ -1,32 +1,24 @@
-<?php 
+<?php
+
+if ( ! defined( 'GB_THEME_ASSETS_VERSION' ) ) {
+    define( 'GB_THEME_ASSETS_VERSION', '0.4' );
+}
 
 function load_gb_theme_header_assets( $hook ) {
     
-    wp_enqueue_style( 'main-css', get_template_directory_uri() . '/css/main.css', array() );
     wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array() );
     wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/lib/animate/animate.min.css', array() );
     wp_enqueue_style( 'owlcarousel-css', get_template_directory_uri() . '/lib/owlcarousel/assets/owl.carousel.min.css', array() );
+    wp_enqueue_style( 'main-css', get_template_directory_uri() . '/css/main.css', array() );
+    wp_enqueue_script( 'wow-js', get_template_directory_uri() . '/lib/wow/wow.min.js', GB_THEME_ASSETS_VERSION, array() );
+    wp_enqueue_script( 'easing-js', get_template_directory_uri() . '/lib/easing/easing.min.js', GB_THEME_ASSETS_VERSION, array() );
+    wp_enqueue_script( 'waypoints-js', get_template_directory_uri() . '/lib/waypoints/waypoints.min.js', GB_THEME_ASSETS_VERSION, array() );
+    wp_enqueue_script( 'owlcarousel-js', get_template_directory_uri() . '/lib/owlcarousel/owl.carousel.min.js', GB_THEME_ASSETS_VERSION, array() );
+    wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', GB_THEME_ASSETS_VERSION, array() );
 
 }
 
 add_action( 'wp_enqueue_scripts', 'load_gb_theme_header_assets' );
-
-function load_gb_theme_footer_assets( $hook ) {
-
-    wp_register_script( 'main-js', get_template_directory_uri() . '/js/main.js', '','1.0', true );
-    wp_register_script( 'wow-js', get_template_directory_uri() . '/lib/wow/wow.min.js', '','1.0', true );
-    wp_register_script( 'easing-js', get_template_directory_uri() . '/lib/easing/easing.min.js', '','1.0', true );
-    wp_register_script( 'waypoints-js', get_template_directory_uri() . '/lib/waypoints/waypoints.min.js', '','1.0', true );
-    wp_register_script( 'owlcarousel-js', get_template_directory_uri() . '/lib/owlcarousel/owl.carousel.min.js', '','1.0', true );
-    wp_enqueue_script('main-js');
-    wp_enqueue_script('wow-js');
-    wp_enqueue_script('easing-js');
-    wp_enqueue_script('waypoints-js');
-    wp_enqueue_script('owlcarousel-js');
-
-}
-
-add_action( 'wp_enqueue_scripts', 'load_gb_theme_footer_assets' );
 
 /**
  * Add theme support for post thumbnails

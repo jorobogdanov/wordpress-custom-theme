@@ -65,3 +65,32 @@ function get_featured_courses($atts) {
 }
 
 add_shortcode('display_featured_courses', 'get_featured_courses');
+
+/**
+ * Function for the Ajax call handling the trainer votes
+ */
+function submit_star_rating() {
+    $post_id = $_POST['post_id'];
+    $rating = $_POST['rating'];
+    
+    // Assuming each post stores ratings in an array of individual ratings
+    $ratings = get_post_meta($post_id, 'ratings', true);
+
+    if (empty($ratings)) {
+        $ratings = array();
+    }
+    
+    $ratings[] = $rating;
+    
+    update_post_meta($post_id, 'ratings', $ratings);
+
+    // Optionally calculate and save the average rating for easier retrieval
+    $average_rating = array_sum($ratings) / count($ratings);
+    update_post_meta($post_id, 'average_rating', $average_rating);
+
+    echo json_encode( array( 'average_rating' => round( $average_rating, 1 ) ) );
+    wp_die(); // this is required to terminate immediately and return a proper response
+}
+
+add_action('wp_ajax_submit_star_rating', 'submit_star_rating'); // For logged in users
+add_action('wp_ajax_nopriv_submit_star_rating', 'submit_star_rating'); // For anonymous users

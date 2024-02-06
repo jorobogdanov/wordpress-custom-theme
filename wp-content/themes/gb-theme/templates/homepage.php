@@ -301,7 +301,7 @@
                                 </div>
                             </div>
                             <div class="bg-light text-center p-4">
-                                <h5 class="mt-2"><?php the_title(); ?></h5>
+                                <h5 class="mt-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
                                 <span>Trainer</span>
                             </div>
                         </div>
